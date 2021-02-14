@@ -36,12 +36,12 @@ class App extends Component {
         <Header /> 
       {this.state.data_loaded==true?(
      <Router>
-      <Link to='/'>
+      <Link to='/blog-web-app'>
         <span className='btn btn-home'>
         <FontAwesomeIcon icon={['fas', 'home']} /> HOME
         </span>
         </Link>
-        <Route exact path='/'  render={(props)=>
+        <Route exact path='/blog-web-app'  render={(props)=>
           <Home {...props} data={this.state.user_data} />
         } />
         <Route exact path='/posts/:id' render={(props)=>
