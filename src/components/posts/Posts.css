@@ -2,13 +2,11 @@
     background: honeydew;
     background-size: cover;
     border-radius: 2px;
-    display: inline-block;
     height: 100%;
     transition: all ease 0.2s;
     padding: 10px;
-    margin: 1rem;
+    margin: 20px;
     position: relative;
-    width: 300px;
     box-shadow: 0 0px 4px rgba(0, 0, 0, 0.19), 0 4px 0px rgba(0, 0, 0, 0.23);
 }
 
@@ -28,14 +26,6 @@
     background-color: white;
     color: black;
     border: 2px solid #008CBA;
-    padding: 8px 16px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
 }
 
 .btn-view:hover {

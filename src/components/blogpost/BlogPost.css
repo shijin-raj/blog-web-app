@@ -26,17 +26,24 @@
     background-color: white;
     color: black;
     border: 2px solid #008CBA;
-    padding: 8px 16px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
 }
 
 .btn-comments:hover {
     background-color: #008CBA;
+    color: white;
+}
+
+.btn-back {
+    font-size: 2rem;
+}
+
+.btn-delete {
+    background-color: white;
+    color: black;
+    border: 2px solid red;
+}
+
+.btn-delete:hover {
+    background-color: red;
     color: white;
 }

@@ -10,6 +10,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './libraries/fontawesome/fontawesome';
 import BlogPost from './components/blogpost/BlogPost';
 import Comments from './components/comments/Comments';
+import Footer from './components/footer/Footer';
+import DeletePost from './components/deletepost/DeletePost';
 class App extends Component {
     state={
       data_loaded:false,
@@ -23,6 +25,8 @@ class App extends Component {
       const api_url="https://jsonplaceholder.typicode.com/users";
       axios.get(api_url).then(res=>{
         this.setState({user_data:res.data,data_loaded:true});
+      }).catch((err)=>{
+        console.error(err);
       });
   }
 
@@ -33,7 +37,7 @@ class App extends Component {
       {this.state.data_loaded==true?(
      <Router>
       <Link to='/'>
-        <span className='btn-home'>
+        <span className='btn btn-home'>
         <FontAwesomeIcon icon={['fas', 'home']} /> HOME
         </span>
         </Link>
@@ -49,6 +53,10 @@ class App extends Component {
         <Route path='/posts/:id/:postid/comments' render={(props)=>
           <Comments {...props} data={this.state.user_data} />
         } />
+        <Route path='/posts/:id/:postid/delete' render={(props)=>
+          <DeletePost {...props} data={this.state.user_data} />
+        } />
+        <Footer />
       </Router>
       ): (
         <LoadingScreen />

@@ -9,20 +9,17 @@ export default class Comments extends Component {
     }
     
     getComments(){
-        var {id,postid}=this.props.match.params;
+        var {postid}=this.props.match.params;
         const api_url="https://jsonplaceholder.typicode.com/posts/"+postid+"/comments";
         axios.get(api_url).then(res=>{
         this.setState({data:res.data,data_loaded:true});
-        console.log(res.data);
-        console.log(this.state.data);
-      });
+      }).catch(err=>console.error(err));
     }
     
     componentDidMount(){
         this.getComments();
     }
     render() {
-        var {id,postid}=this.props.match.params;
         return (
             <>
             {this.state.data_loaded?(

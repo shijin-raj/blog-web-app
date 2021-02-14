@@ -10,14 +10,12 @@ export default class Home extends Component {
 
     handleChange=(event)=>{
         var val=event.target.value;
-        console.log(val);
         var data = this.props.data;
         var filtered_posts=data.filter(
             (author)=>{    
                 return author.name.includes(val)||author.company.name.includes(val)||author.name.toLowerCase().includes(val)||author.company.name.toLowerCase().includes(val);  
             }
             );
-        console.log(filtered_posts);
         this.setState({
                 filter:val,
                 filtered_data:filtered_posts

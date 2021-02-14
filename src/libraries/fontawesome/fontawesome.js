@@ -1,5 +1,6 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faBlog, faBuilding, faChevronLeft, faCode, faEye, faHighlighter,faHome,faPenNib,faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { faFacebook, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faBlog, faBuilding, faChevronCircleLeft, faChevronLeft, faCode, faComment, faEye, faHighlighter,faHome,faPenNib,faSpinner, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
     faCode,
@@ -10,5 +11,11 @@ library.add(
     faPenNib,
     faChevronLeft,
     faBuilding,
-    faBlog
+    faBlog,
+    faChevronCircleLeft,
+    faComment,
+    faGithub,
+    faLinkedin,
+    faFacebook,
+    faTrash
 );

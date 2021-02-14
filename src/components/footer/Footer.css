@@ -1,0 +1,15 @@
+.footer {
+    padding: 20px;
+    margin-top: 20px;
+    background-color: whitesmoke;
+    text-align: center;
+}
+
+.footer-contact {
+    font-size: 1.5rem;
+}
+
+.social {
+    padding: 10px;
+    color: black
+}

@@ -15,8 +15,6 @@ export default class BlogPost extends Component {
         const api_url="https://jsonplaceholder.typicode.com/posts/"+postid;
         axios.get(api_url).then(res=>{
         this.setState({data:res.data,data_loaded:true});
-        console.log(res.data);
-        console.log(this.state.data);
       });
     }
 
@@ -33,7 +31,10 @@ export default class BlogPost extends Component {
             {this.state.data_loaded?(
             <div>
                 <Link to={'/posts/'+id}>
-                <FontAwesomeIcon icon={['fas', 'chevron-left']} />
+                    <span className="btn-back">
+
+                <FontAwesomeIcon icon={['fas', 'chevron-circle-left']} />
+                    </span>
                 </Link>
                 <div className='blog-title'>
                     {this.state.data.title.toUpperCase()} 
@@ -44,7 +45,12 @@ export default class BlogPost extends Component {
                 {this.state.data.body}
                 </div>
                 <Link to={'/posts/'+id+'/'+postid+'/comments'}>
-                    <span className='btn-comments'>COMMENTS</span></Link>
+                    <span className='btn btn-comments'>
+                        <FontAwesomeIcon icon={['fas','comment']} /> COMMENTS</span></Link>
+                        <Link to={'/posts/'+id+'/'+postid+'/delete'}>
+                        <span className="btn btn-delete">
+                        <FontAwesomeIcon icon={['fas','trash']} /> DELETE POST</span>
+                        </Link>
             </div>
             ):(
                 <LoadingScreen />

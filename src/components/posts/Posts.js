@@ -27,14 +27,12 @@ export default class Posts extends Component {
 
     handleChange=(event)=>{
         var val=event.target.value;
-        console.log(val);
         var {data} = this.state;
         var filtered_posts=data.filter(
             (post)=>{    
                 return post.title.includes(val.toLowerCase());  
             }
             );
-        console.log(filtered_posts);
         this.setState({
                 filter:val,
                 filtered_data:filtered_posts
@@ -66,7 +64,7 @@ export default class Posts extends Component {
                             <div className='card' key={blog.id}>
                                 <h5>{blog.title.toUpperCase()}</h5>
                                 <Link to={'/posts/'+id+'/'+blog.id}>
-                                    <span className='btn-view'>
+                                    <span className='btn btn-view'>
                                     <FontAwesomeIcon icon={['fas', 'eye']} /> VIEW POST</span></Link>
                                 </div>)
                     }
