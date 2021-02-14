@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react'
 import './App.css';
 import Header from './components/header/Header';
@@ -6,6 +5,11 @@ import Posts from './components/posts/Posts';
 import Home from './components/home/Home';
 import axios from 'axios';
 import {BrowserRouter as Router,Route,Link} from 'react-router-dom';
+import LoadingScreen from './components/loadingscreen/LoadingScreen';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import './libraries/fontawesome/fontawesome';
+import BlogPost from './components/blogpost/BlogPost';
+import Comments from './components/comments/Comments';
 class App extends Component {
     state={
       data_loaded:false,
@@ -18,24 +22,37 @@ class App extends Component {
     getUsersFromAPI=()=>{
       const api_url="https://jsonplaceholder.typicode.com/users";
       axios.get(api_url).then(res=>{
-        this.setState({user_data:res.data});
+        this.setState({user_data:res.data,data_loaded:true});
       });
   }
 
   render() {
     return (
       <div className="App">
-      <Router>
-      <Header />
-      <Link to='/'>Home</Link>
+        <Header /> 
+      {this.state.data_loaded==true?(
+     <Router>
+      <Link to='/'>
+        <span className='btn-home'>
+        <FontAwesomeIcon icon={['fas', 'home']} /> HOME
+        </span>
+        </Link>
         <Route exact path='/'  render={(props)=>
           <Home {...props} data={this.state.user_data} />
         } />
-        <Route path='/posts/:id' render={(props)=>
+        <Route exact path='/posts/:id' render={(props)=>
           <Posts {...props} data={this.state.user_data} />
-        }
-        />
+        } />
+        <Route path='/posts/:id/:postid' render={(props)=>
+          <BlogPost {...props} data={this.state.user_data} />
+        } />
+        <Route path='/posts/:id/:postid/comments' render={(props)=>
+          <Comments {...props} data={this.state.user_data} />
+        } />
       </Router>
+      ): (
+        <LoadingScreen />
+      )}
     </div>
     )
   }

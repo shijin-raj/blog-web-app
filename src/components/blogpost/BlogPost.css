@@ -1,0 +1,42 @@
+.blog-title {
+    color: rgb(255, 255, 255);
+    font-size: 2rem;
+    background-color: rgb(0, 0, 0);
+    padding: 10px;
+    width: 100%;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.blog-content {
+    color: grey;
+    margin: 20px;
+}
+
+.author {
+    font-size: 0.8rem;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    float: right;
+    background-color: gray;
+}
+
+.btn-comments {
+    background-color: white;
+    color: black;
+    border: 2px solid #008CBA;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.btn-comments:hover {
+    background-color: #008CBA;
+    color: white;
+}

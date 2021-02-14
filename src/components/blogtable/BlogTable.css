@@ -1,6 +1,15 @@
 .container {
-    margin: 50px;
-    padding: 20px;
+    margin: 20px;
+}
+
+.page-title {
+    color: rgb(255, 255, 255);
+    font-size: 2rem;
+    background-color: rgb(0, 0, 0);
+    padding: 10px;
+    width: 100%;
+    margin-top: 20px;
+    display: inline-block;
 }
 
 table {
@@ -17,5 +26,5 @@ td {
 }
 
 tr:nth-child(even) {
-    background-color: #f2f2f2
+    background-color: honeydew
 }

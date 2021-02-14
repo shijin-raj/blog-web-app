@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import "./BlogTable.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '../../libraries/fontawesome/fontawesome';
 export default class BlogTable extends Component {
-    constructor(props){
-        super(props);
-    }
-  
+   
+
     render() {
         var data=this.props.data;
         return (
+            <>
             <div className="container">
               <table>
                   <thead>
@@ -30,9 +31,14 @@ export default class BlogTable extends Component {
                               console.log(user.name);
                               return (
                                 <tr key={user.id}>
-                                <td>{user.name}</td>
-                                <td>{user.company.name}</td>
-                                <td><Link to={'/posts/'+user.id}>View Posts</Link></td>
+                                <td><FontAwesomeIcon icon={['fas', 'pen-nib']} /> {user.name}</td>
+                                <td><FontAwesomeIcon icon={['fas', 'building']} /> {user.company.name}</td>
+                                <td><Link to={'/posts/'+user.id}>
+                                    <span className="btn-view">
+                                <FontAwesomeIcon icon={['fas', 'eye']} />
+                                VIEW POSTS
+                                    </span>
+                                 </Link></td>
                                 </tr>
                               )
                           })
@@ -40,6 +46,7 @@ export default class BlogTable extends Component {
                   </tbody>
                 </table>  
             </div>
+            </>
         )
     }
 }
