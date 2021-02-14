@@ -11,6 +11,8 @@
 .blog-content {
     color: grey;
     margin: 20px;
+    background-color: cornsilk;
+    padding: 20px;
 }
 
 .author {

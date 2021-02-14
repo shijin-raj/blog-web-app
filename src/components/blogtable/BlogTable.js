@@ -25,7 +25,7 @@ export default class BlogTable extends Component {
                   </tr>
                   </thead>
                   <tbody>
-                      {
+                        {
                           data.map((user)=>{
                               return (
                                 <tr key={user.id}>
