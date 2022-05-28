@@ -5,8 +5,6 @@ export default class Header extends Component {
     render() {
         return (
             <header className="header">
-                <h1>
-                    <FontAwesomeIcon icon={['fas','blog']} /> Blog Web App</h1>
             </header>
         )
     }

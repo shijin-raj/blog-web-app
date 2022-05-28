@@ -12,6 +12,7 @@ import BlogPost from './components/blogpost/BlogPost';
 import Comments from './components/comments/Comments';
 import Footer from './components/footer/Footer';
 import DeletePost from './components/deletepost/DeletePost';
+import Navbar from './components/navbar/navbar';
 class App extends Component {
     state={
       data_loaded:false,
@@ -33,14 +34,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+
         <Header /> 
-      {this.state.data_loaded==true?(
+      {this.state.data_loaded===true?(
      <Router>
-      <Link to='/blog-web-app'>
-        <span className='btn btn-home'>
-        <FontAwesomeIcon icon={['fas', 'home']} /> HOME
-        </span>
-        </Link>
+  
         <Route exact path='/blog-web-app'  render={(props)=>
           <Home {...props} data={this.state.user_data} />
         } />
@@ -56,7 +54,7 @@ class App extends Component {
         <Route path='/posts/:id/:postid/delete' render={(props)=>
           <DeletePost {...props} data={this.state.user_data} />
         } />
-        <Footer />
+        {/* <Footer /> */}
       </Router>
       ): (
         <LoadingScreen />
