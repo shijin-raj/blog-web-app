@@ -1,11 +1,12 @@
 .container {
-    max-height: 70vh;
+    max-height: 60vh;
     overflow-y: scroll;
     overflow-x: hidden;
     margin-top: 20px;
 }
 .table-wrap{
     display: flex;
+    justify-content: center;
 }
 .page-title {
     color: rgb(255, 255, 255);
@@ -32,4 +33,10 @@ td {
 
 tr:nth-child(even) {
     background-color: honeydew
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+    margin-top: 85px;
+    }
 }

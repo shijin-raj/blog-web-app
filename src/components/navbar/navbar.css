@@ -1,31 +1,78 @@
-.nav-container{
-    margin-top: 20px;
-    margin-right: 15px;
+.nav-container {
+  margin-top: 20px;
+  margin-right: 15px;
+}
+.icon-text{
+    display: none;
+}
+.nav-item {
+  padding: 15px;
+  border: 0.1px solid rgb(233, 220, 245);
+  cursor: pointer;
+  width: 30px;
+  border-left: 5px solid rgb(233, 220, 245);
+  transition: all 0.5s ease;
+  background: white;
 }
 
-.nav-item{
-    padding: 15px;
-    border:0.1px solid rgb(233, 220, 245);
-    cursor: pointer;
-    width: 30px;
-    border-left: 5px solid rgb(233, 220, 245);
-    transition: all 0.5s ease;
+.nav-item:first-child {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
 }
 
-.nav-item:first-child{
-    border-top-left-radius:3px;
-    border-top-right-radius:3px;
+.nav-item:last-child {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.nav-item:hover {
+  color: blueviolet;
+}
+.nav-item.active {
+  border-left: 5px solid blueviolet;
+  color: blueviolet;
+  width: -5px;
+  background: white;
 }
 
-.nav-item:last-child{
-    border-bottom-left-radius:3px;
-    border-bottom-right-radius:3px;
+@media only screen and (max-width: 600px) {
+  .nav-container {
+    position: fixed;
+    bottom: 0px;
+    display: flex;
+    background: white;
+    justify-content: center;
+    width: 100%;
+    margin-top: 0px;
+    margin-right: 0px;
+  }
+  .nav-item {
+    width: auto;
+    flex: 1;
+    font-size: 2rem;
+    border: 0.1px solid rgb(233, 220, 245);
+    border-top: 5px solid rgb(233, 220, 245);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-item.active {
+    border-left: 0.1px solid rgb(233, 220, 245);
+    border-top: 5px solid blueviolet;
+  }
+  .nav-item:first-child {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+  }
+  
+  .nav-item:last-child {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .icon-text{
+    font-size: 14px;
+    padding: 10px;
+    display: block;
 }
-.nav-item:hover{
-    color: blueviolet;
-}
-.nav-item.active{
-    border-left: 5px solid blueviolet;
-    color: blueviolet;
-    width: -5px;
 }

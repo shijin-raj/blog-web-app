@@ -15,8 +15,8 @@ export default class Navbar extends Component {
     render() {
         return (
             <div className="nav-container">
-                <div className="nav-item" onClick={(e)=>{this.handleMenuChange(e)}}><FontAwesomeIcon icon={['fas', 'pen-nib']} /></div>
-                <div className="nav-item" onClick={(e)=>{this.handleMenuChange(e)}}><FontAwesomeIcon icon={["fas", "building"]} /></div>
+                <div className="nav-item active" onClick={(e)=>{this.handleMenuChange(e)}}><FontAwesomeIcon icon={['fas', 'pen-nib']} /><span className="icon-text">Authors</span></div>
+                <div className="nav-item" onClick={(e)=>{this.handleMenuChange(e)}}><FontAwesomeIcon icon={["fas", "building"]} /><span className="icon-text">Companies</span></div>
             </div>
         )
     }
